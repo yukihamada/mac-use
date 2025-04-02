@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>設定 - Open Interpreter Chat</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>設定</h1>
+            <nav>
+                <a href="/" class="nav-link">チャットに戻る</a>
+            </nav>
+        </header>
+
+        <div class="settings-container">
+            <section class="settings-section">
+                <h2>表示設定</h2>
+                <div class="setting-item">
+                    <label for="theme">テーマ</label>
+                    <select id="theme">
+                        <option value="light">ライト</option>
+                        <option value="dark">ダーク</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <label for="fontSize">フォントサイズ</label>
+                    <select id="fontSize">
+                        <option value="small">小</option>
+                        <option value="medium">中</option>
+                        <option value="large">大</option>
+                    </select>
+                </div>
+            </section>
+
+            <section class="settings-section">
+                <h2>会話履歴</h2>
+                <div class="setting-item">
+                    <label for="maxHistory">保存する会話数</label>
+                    <select id="maxHistory">
+                        <option value="10">10件</option>
+                        <option value="20">20件</option>
+                        <option value="50">50件</option>
+                        <option value="100">100件</option>
+                        <option value="unlimited">無制限</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <button id="clearHistory" class="danger-button">会話履歴を削除</button>
+                </div>
+            </section>
+
+            <section class="settings-section">
+                <h2>会話履歴一覧</h2>
+                <div id="historyList" class="history-list">
+                    <!-- 会話履歴がここに表示されます -->
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="/static/js/settings.js"></script>
+</body>
+</html> 

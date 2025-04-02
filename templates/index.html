@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Interpreter Chat</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Open Interpreter Chat</h1>
+        <a href="/settings" id="settingsLink" class="settings-link" aria-label="設定">
+            <svg class="settings-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.39-.29-.61-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.23-.08-.49 0-.61.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.07.62-.07.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.39.29.61.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.23.08.49 0 .61-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.03-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+            </svg>
+        </a>
+    </header>
+
+    <div class="container">
+        <div class="examples">
+            <button onclick="setExample('現在のディレクトリの内容を表示してください')">ディレクトリ表示</button>
+            <button onclick="setExample('現在の時刻を教えてください')">時刻表示</button>
+            <button onclick="setExample('システムの情報を表示してください')">システム情報</button>
+            <button onclick="setExample('メモリの使用状況を表示してください')">メモリ使用状況</button>
+        </div>
+
+        <div class="toolbar">
+            <button id="resetButton" class="reset-button">会話をリセット</button>
+            <button id="stopButton" class="stop-button" disabled>処理を停止</button>
+        </div>
+
+        <div class="chat-container">
+            <div id="chatMessages" class="chat-messages">
+                <div class="message system-message">
+                    <div class="message-content">こんにちは！Open Interpreterとチャットを開始してください。</div>
+                </div>
+            </div>
+
+            <div class="chat-input">
+                <textarea id="userInput" placeholder="メッセージを入力..." rows="1"></textarea>
+                <button id="sendButton" onclick="sendMessage()" aria-label="送信">
+                    <svg class="send-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/chat.js"></script>
+</body>
+</html> 

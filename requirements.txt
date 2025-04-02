@@ -1,2 +1,7 @@
 Flask>=2.0
-open-interpreter>=0.1.8 
+open-interpreter>=0.1.8
+fastapi
+uvicorn
+websockets
+jinja2
+python-multipart 
