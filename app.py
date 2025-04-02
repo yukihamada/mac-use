@@ -303,7 +303,7 @@ if __name__ == '__main__':
     import uvicorn
     uvicorn.run(
         "app:app",
-        host="127.0.0.1",  # localhostを使用
+        host="0.0.0.0",  # すべてのネットワークインターフェースからのアクセスを許可
         port=FLASK_PORT,
         reload=FLASK_DEBUG
     )
