@@ -213,7 +213,9 @@ function connectWebSocket() {
     isConnecting = true;
     isIntentionalClose = false;
     
-    const wsUrl = 'ws://127.0.0.1:5001/ws';
+    // 現在のホストを使用してWebSocket URLを構築
+    const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+    const wsUrl = `${protocol}//${window.location.host}/ws`;
     console.log('WebSocket接続を開始します:', wsUrl);
     ws = new WebSocket(wsUrl);
     
